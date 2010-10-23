@@ -65,13 +65,13 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\RPXAuthenticationController.cs" />
+    <Compile Include="Controllers\EngageAuthenticationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Extensions\RPXHtmlExtensions.cs" />
+    <Compile Include="Extensions\EngageHtmlExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -80,8 +80,8 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Views\RPXAuthentication\LoginCancelled.aspx" />
-    <Content Include="Views\RPXAuthentication\SignedIn.aspx" />
+    <Content Include="Views\EngageAuthentication\LoginCancelled.aspx" />
+    <Content Include="Views\EngageAuthentication\SignedIn.aspx" />
     <Content Include="Web.config" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\jquery-1.2.6.js" />
