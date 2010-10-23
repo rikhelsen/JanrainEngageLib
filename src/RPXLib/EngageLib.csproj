@@ -8,8 +8,8 @@
     <ProjectGuid>{FFEC4881-58C8-43BC-B0C3-D97114725C70}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RPXLib</RootNamespace>
-    <AssemblyName>RPXLib</AssemblyName>
+    <RootNamespace>EngageLib</RootNamespace>
+    <AssemblyName>EngageLib</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

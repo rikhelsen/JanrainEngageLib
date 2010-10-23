@@ -8,8 +8,8 @@
     <ProjectTypeGuids>{603c0e0b-db56-11dc-be95-000d561079b0};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RPX.Web.MVC</RootNamespace>
-    <AssemblyName>RPX.Web.MVC</AssemblyName>
+    <RootNamespace>Engage.Web.MVC</RootNamespace>
+    <AssemblyName>Engage.Web.MVC</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -96,9 +96,9 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RPXLib\RPXLib.csproj">
+    <ProjectReference Include="..\RPXLib\EngageLib.csproj">
       <Project>{FFEC4881-58C8-43BC-B0C3-D97114725C70}</Project>
-      <Name>RPXLib</Name>
+      <Name>EngageLib</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

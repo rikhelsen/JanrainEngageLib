@@ -8,8 +8,8 @@
     <ProjectGuid>{BF6B42CB-36FB-43FD-B6BE-D9333E4EE3C9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RPXLib.Tests</RootNamespace>
-    <AssemblyName>RPXLib.Tests</AssemblyName>
+    <RootNamespace>EngageLib.Tests</RootNamespace>
+    <AssemblyName>EngageLib.Tests</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -69,9 +69,9 @@
     <Compile Include="Data\RPXNameTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RPXLib\RPXLib.csproj">
+    <ProjectReference Include="..\RPXLib\EngageLib.csproj">
       <Project>{FFEC4881-58C8-43BC-B0C3-D97114725C70}</Project>
-      <Name>RPXLib</Name>
+      <Name>EngageLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
