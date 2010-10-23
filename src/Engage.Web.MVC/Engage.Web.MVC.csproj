@@ -96,7 +96,7 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RPXLib\EngageLib.csproj">
+    <ProjectReference Include="..\EngageLib\EngageLib.csproj">
       <Project>{FFEC4881-58C8-43BC-B0C3-D97114725C70}</Project>
       <Name>EngageLib</Name>
     </ProjectReference>
