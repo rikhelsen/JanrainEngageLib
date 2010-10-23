@@ -1,15 +1,15 @@
 using System.IO;
 using System.Xml.Linq;
-using RPXLib.Exceptions;
+using EngageLib.Exceptions;
 
-namespace RPXLib
+namespace EngageLib
 {
-	public static class RPXApiResponseParser
+	public static class EngageApiResponseParser
 	{
 		public static XElement Parse(TextReader responseReader)
 		{
 			if (responseReader == null)
-				throw new RPXException("No response to parse");
+				throw new EngageException("No response to parse");
 
 		    var doc = XDocument.Load(responseReader, LoadOptions.None);
 			if (doc.Root.Attribute("stat").Value == "ok")
@@ -21,42 +21,42 @@ namespace RPXLib
 			switch (errCode)
 			{
 				case -1:
-					throw new RPXServiceTemporarilyUnavailableException(errCode, errMsg);
+					throw new EngageServiceTemporarilyUnavailableException(errCode, errMsg);
 				case 0:
-					throw new RPXMissingParameterException(errCode, errMsg);
+					throw new EngageMissingParameterException(errCode, errMsg);
 				case 1:
-					throw new RPXInvalidParameterException(errCode, errMsg);
+					throw new EngageInvalidParameterException(errCode, errMsg);
 				case 2:
-					throw new RPXDataNotFoundException(errCode, errMsg);
+					throw new EngageDataNotFoundException(errCode, errMsg);
 				case 3:
 					if(errMsg.ToLowerInvariant().StartsWith("token url mismatch"))
-						throw new RPXTokenUrlMismatchException(errCode, errMsg);
-					throw new RPXAuthenticationErrorException(errCode, errMsg);
+						throw new EngageTokenUrlMismatchException(errCode, errMsg);
+					throw new EngageAuthenticationErrorException(errCode, errMsg);
 				case 4:
-					throw new RPXFacebookErrorException(errCode, errMsg);
+					throw new EngageFacebookErrorException(errCode, errMsg);
 				case 5:
-					throw new RPXMappingExistsException(errCode, errMsg);
+					throw new EngageMappingExistsException(errCode, errMsg);
 				case 6:
-					throw new RPXPreviouslyOperationalProviderException(errCode, errMsg);
+					throw new EngagePreviouslyOperationalProviderException(errCode, errMsg);
 				case 7:
-					throw new RPXAccountUpgradeNeededException(errCode, errMsg);
+					throw new EngageAccountUpgradeNeededException(errCode, errMsg);
 				case 8:
-					throw new RPXCredentialsMissingException(errCode, errMsg);
+					throw new EngageCredentialsMissingException(errCode, errMsg);
 				case 9:
-					throw new RPXCredentialsRevokedException(errCode, errMsg);
+					throw new EngageCredentialsRevokedException(errCode, errMsg);
 				case 10:
-					throw new RPXApplicationConfigurationException(errCode, errMsg);
+					throw new EngageApplicationConfigurationException(errCode, errMsg);
 				case 11:
-					throw new RPXUnsupportedProviderFeatureException(errCode, errMsg);
+					throw new EngageUnsupportedProviderFeatureException(errCode, errMsg);
 				default:
-					throw new RPXUnknownResponseException(errCode, errMsg);
+					throw new EngageUnknownResponseException(errCode, errMsg);
 			}
 		}
 
 		public static XElement Parse(string responseString)
 		{
 			if (string.IsNullOrEmpty(responseString))
-				throw new RPXException("No response to parse.");
+				throw new EngageException("No response to parse.");
 
 			using (var stringReader = new StringReader(responseString))
 			{

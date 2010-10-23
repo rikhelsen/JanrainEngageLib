@@ -1,21 +1,21 @@
 ﻿using System;
 
-namespace RPXLib.Exceptions
+namespace EngageLib.Exceptions
 {
 	[Serializable]
-	public class RPXCredentialsMissingException : RPXResponseException
+	public class EngageCredentialsMissingException : EngageResponseException
 	{
-		public RPXCredentialsMissingException(int errorCode, string message, Exception inner)
+		public EngageCredentialsMissingException(int errorCode, string message, Exception inner)
 			: base(errorCode, message, inner)
 		{
 		}
 
-		public RPXCredentialsMissingException(int errorCode, string message)
+		public EngageCredentialsMissingException(int errorCode, string message)
 			: base(errorCode, message, null)
 		{
 		}
 
-		public RPXCredentialsMissingException()
+		public EngageCredentialsMissingException()
 		{
 		}
 	}

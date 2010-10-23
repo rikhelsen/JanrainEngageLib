@@ -1,26 +1,26 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace RPXLib
+namespace EngageLib
 {
 	[Serializable]
-	public class RPXException : ApplicationException
+	public class EngageException : ApplicationException
 	{
-		public RPXException()
+		public EngageException()
 		{
 		}
 
-		public RPXException(string message)
+		public EngageException(string message)
 			: base(message)
 		{
 		}
 
-		public RPXException(string message, Exception inner)
+		public EngageException(string message, Exception inner)
 			: base(message, inner)
 		{
 		}
 
-		protected RPXException(SerializationInfo info, StreamingContext context)
+		protected EngageException(SerializationInfo info, StreamingContext context)
 			: base(info, context)
 		{
 		}

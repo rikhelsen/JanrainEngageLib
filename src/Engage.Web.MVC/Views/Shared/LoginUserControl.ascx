@@ -1,20 +1,20 @@
-﻿<%@ Import Namespace="RPX.Web.MVC.Extensions"%>
+﻿<%@ Import Namespace="Engage.Web.MVC.Extensions"%>
 <%@ Control Language="C#" AutoEventWireup="true" Inherits="System.Web.Mvc.ViewUserControl" %>
 <%
     if (Request.IsAuthenticated) {
 %>
         Welcome <b><%= Html.Encode(Page.User.Identity.Name) %></b>!
-        [ <%= Html.ActionLink("Sign Out", "SignOut", "RPXAuthentication")%> ]
+        [ <%= Html.ActionLink("Sign Out", "SignOut", "EngageAuthentication")%> ]
 <%
     }
     else {
 %> 
-        [ <a class="rpxnow" onclick="return false;" href="https://rpxtest.rpxnow.com/openid/v2/signin?token_url=<%=Html.RPXTokenUrl() %>">Sign In</a> ]
-        <script src="https://rpxnow.com/openid/v2/widget" type="text/javascript"></script>
+        [ <a class="Engagenow" onclick="return false;" href="https://Engagetest.Engagenow.com/openid/v2/signin?token_url=<%=Html.EngageTokenUrl() %>">Sign In</a> ]
+        <script src="https://Engagenow.com/openid/v2/widget" type="text/javascript"></script>
         <script type="text/javascript">
-            RPXNOW.token_url = '<%=Html.RPXTokenUrl() %>';
-            RPXNOW.realm = '<%=Html.RPXRealm() %>';
-            RPXNOW.overlay = true;
+            EngageNOW.token_url = '<%=Html.EngageTokenUrl() %>';
+            EngageNOW.realm = '<%=Html.EngageRealm() %>';
+            EngageNOW.overlay = true;
         </script>
 <%
     }

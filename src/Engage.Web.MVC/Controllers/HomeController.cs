@@ -1,14 +1,14 @@
 ﻿using System.Web.Mvc;
 
-namespace RPX.Web.MVC.Controllers
+namespace Engage.Web.MVC.Controllers
 {
     [HandleError]
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
-            ViewData["Title"] = "RPXLib Demo";
-            ViewData["Message"] = "RPXLib Demo";
+            ViewData["Title"] = "EngageLib Demo";
+            ViewData["Message"] = "EngageLib Demo";
 
             return View();
         }

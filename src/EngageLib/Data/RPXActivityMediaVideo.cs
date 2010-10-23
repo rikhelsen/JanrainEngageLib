@@ -1,6 +1,6 @@
-﻿namespace RPXLib.Data
+﻿namespace EngageLib.Data
 {
-	public class RPXActivityMediaVideo : RPXActivityMedia
+	public class EngageActivityMediaVideo : EngageActivityMedia
 	{
 		public string Url { get; set; }
 		public string LinkUrl { get; set; }

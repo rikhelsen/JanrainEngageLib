@@ -1,21 +1,21 @@
 ﻿using System;
 
-namespace RPXLib.Exceptions
+namespace EngageLib.Exceptions
 {
 	[Serializable]
-	public class RPXDataNotFoundException : RPXResponseException
+	public class EngageDataNotFoundException : EngageResponseException
 	{
-		public RPXDataNotFoundException(int errorCode, string message, Exception inner)
+		public EngageDataNotFoundException(int errorCode, string message, Exception inner)
 			: base(errorCode, message, inner)
 		{
 		}
 
-		public RPXDataNotFoundException(int errorCode, string message)
+		public EngageDataNotFoundException(int errorCode, string message)
 			: base(errorCode, message, null)
 		{
 		}
 
-		public RPXDataNotFoundException()
+		public EngageDataNotFoundException()
 		{
 		}
 	}

@@ -1,21 +1,21 @@
 ﻿using System;
 
-namespace RPXLib.Exceptions
+namespace EngageLib.Exceptions
 {
 	[Serializable]
-	public class RPXUnknownResponseException : RPXResponseException
+	public class EngageUnknownResponseException : EngageResponseException
 	{
-		public RPXUnknownResponseException(int errorCode, string message, Exception inner)
+		public EngageUnknownResponseException(int errorCode, string message, Exception inner)
 			: base(errorCode, message, inner)
 		{
 		}
 
-		public RPXUnknownResponseException(int errorCode, string message)
+		public EngageUnknownResponseException(int errorCode, string message)
 			: base(errorCode, message, null)
 		{
 		}
 
-		public RPXUnknownResponseException()
+		public EngageUnknownResponseException()
 		{
 		}
 	}

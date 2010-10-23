@@ -1,21 +1,21 @@
 ﻿using System;
 
-namespace RPXLib.Exceptions
+namespace EngageLib.Exceptions
 {
 	[Serializable]
-	public class RPXApplicationConfigurationException : RPXResponseException
+	public class EngageApplicationConfigurationException : EngageResponseException
 	{
-		public RPXApplicationConfigurationException(int errorCode, string message, Exception inner)
+		public EngageApplicationConfigurationException(int errorCode, string message, Exception inner)
 			: base(errorCode, message, inner)
 		{
 		}
 
-		public RPXApplicationConfigurationException(int errorCode, string message)
+		public EngageApplicationConfigurationException(int errorCode, string message)
 			: base(errorCode, message, null)
 		{
 		}
 
-		public RPXApplicationConfigurationException()
+		public EngageApplicationConfigurationException()
 		{
 		}
 	}

@@ -1,22 +1,22 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace RPXLib.Exceptions
+namespace EngageLib.Exceptions
 {
 	[Serializable]
-	public abstract class RPXResponseException : RPXException
+	public abstract class EngageResponseException : EngageException
 	{
-		protected RPXResponseException()
+		protected EngageResponseException()
 		{
 		}
 
-		protected RPXResponseException(int errorCode, string message, Exception inner)
+		protected EngageResponseException(int errorCode, string message, Exception inner)
 			: base(message, inner)
 		{
 			ErrorCode = errorCode;
 		}
 
-		protected RPXResponseException(SerializationInfo info, StreamingContext context)
+		protected EngageResponseException(SerializationInfo info, StreamingContext context)
 			: base(info, context)
 		{
 		}

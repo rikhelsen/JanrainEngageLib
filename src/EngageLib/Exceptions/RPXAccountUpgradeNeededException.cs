@@ -1,21 +1,21 @@
 ﻿using System;
 
-namespace RPXLib.Exceptions
+namespace EngageLib.Exceptions
 {
 	[Serializable]
-	public class RPXAccountUpgradeNeededException : RPXResponseException
+	public class EngageAccountUpgradeNeededException : EngageResponseException
 	{
-		public RPXAccountUpgradeNeededException(int errorCode, string message, Exception inner)
+		public EngageAccountUpgradeNeededException(int errorCode, string message, Exception inner)
 			: base(errorCode, message, inner)
 		{
 		}
 
-		public RPXAccountUpgradeNeededException(int errorCode, string message)
+		public EngageAccountUpgradeNeededException(int errorCode, string message)
 			: base(errorCode, message, null)
 		{
 		}
 
-		public RPXAccountUpgradeNeededException()
+		public EngageAccountUpgradeNeededException()
 		{
 		}
 	}

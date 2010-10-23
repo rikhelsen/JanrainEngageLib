@@ -1,22 +1,22 @@
 using NUnit.Framework;
-using RPXLib.Data;
+using EngageLib.Data;
 
-namespace RPXLib.Tests.Data
+namespace EngageLib.Tests.Data
 {
     [TestFixture]
-    public class RPXNameTests
+    public class EngageNameTests
     {
         #region Setup/Teardown
 
         [SetUp]
         public void TestSetup()
         {
-            name = new RPXName();
+            name = new EngageName();
         }
 
         #endregion
 
-        private RPXName name;
+        private EngageName name;
 
         [Test]
         public void CanPopulateFamilyNameProperty()

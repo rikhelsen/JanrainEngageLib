@@ -1,12 +1,12 @@
 ﻿using System.Linq;
 using System.Xml.Linq;
 using NUnit.Framework;
-using RPXLib.Data;
+using EngageLib.Data;
 
-namespace RPXLib.Tests.Data
+namespace EngageLib.Tests.Data
 {
 	[TestFixture]
-	public class RPXContactTests
+	public class EngageContactTests
 	{
 		[Test]
 		public void GetFromXElement_ParsesContactCorrectly()
@@ -15,7 +15,7 @@ namespace RPXLib.Tests.Data
 					new XElement("displayName", "Some User"),
 					new XElement("emails")
 				);
-			var contact = RPXContact.FromXElement(xelement);
+			var contact = EngageContact.FromXElement(xelement);
 
 			Assert.AreEqual("Some User", contact.DisplayName);
 			Assert.IsNotNull(contact.EmailAddresses);
@@ -28,7 +28,7 @@ namespace RPXLib.Tests.Data
 			var xelement = new XElement("entry",
 					new XElement("emails")
 				);
-			var contact = RPXContact.FromXElement(xelement);
+			var contact = EngageContact.FromXElement(xelement);
 
 			Assert.IsNull(contact.DisplayName);
 			Assert.IsNotNull(contact.EmailAddresses);
@@ -41,7 +41,7 @@ namespace RPXLib.Tests.Data
 			var xelement = new XElement("entry",
 					new XElement("displayName", "Some User")
 				);
-			var contact = RPXContact.FromXElement(xelement);
+			var contact = EngageContact.FromXElement(xelement);
 
 			Assert.AreEqual("Some User", contact.DisplayName);
 			Assert.IsNotNull(contact.EmailAddresses);

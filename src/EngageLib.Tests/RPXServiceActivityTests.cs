@@ -1,26 +1,26 @@
 using System;
 using NUnit.Framework;
 using Rhino.Mocks;
-using RPXLib.Interfaces;
+using EngageLib.Interfaces;
 
-namespace RPXLib.Tests
+namespace EngageLib.Tests
 {
     [TestFixture]
-    public class RPXServiceActivityTests
+    public class EngageServiceActivityTests
     {
         #region Setup/Teardown
 
         [SetUp]
         public void TestSetup()
         {
-            mockApiWrapper = MockRepository.GenerateMock<IRPXApiWrapper>();
-            rpxService = new RPXService(mockApiWrapper);
+            mockApiWrapper = MockRepository.GenerateMock<IEngageApiWrapper>();
+            EngageService = new EngageService(mockApiWrapper);
         }
 
         #endregion
 
-        private RPXService rpxService;
-        private IRPXApiWrapper mockApiWrapper;
+        private EngageService EngageService;
+        private IEngageApiWrapper mockApiWrapper;
 
 		//[Test]
 		//public void AddActivity_CallsApiWrapperWithCorrectDetails()
@@ -32,7 +32,7 @@ namespace RPXLib.Tests
 		//                    d => d["identifier"].Equals("id")
 		//                    ))).Return(null);
 
-		//    rpxService.AddActivity("id", null);
+		//    EngageService.AddActivity("id", null);
 
 		//    mockApiWrapper.VerifyAllExpectations();
 		//}
@@ -41,7 +41,7 @@ namespace RPXLib.Tests
 		[ExpectedException(typeof(NotImplementedException))]
 		public void AddActivity_ThrowsNotImplementedException()
 		{
-			rpxService.AddActivity("", null);
+			EngageService.AddActivity("", null);
 		}
     }
 }

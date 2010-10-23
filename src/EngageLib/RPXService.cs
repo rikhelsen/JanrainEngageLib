@@ -1,28 +1,28 @@
 using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
-using RPXLib.Data;
-using RPXLib.Interfaces;
+using EngageLib.Data;
+using EngageLib.Interfaces;
 
-namespace RPXLib
+namespace EngageLib
 {
-    public class RPXService : IRPXService
+    public class EngageService : IEngageService
     {
-        private readonly IRPXApiWrapper apiWrapper;
+        private readonly IEngageApiWrapper apiWrapper;
 
-        public RPXService(IRPXApiSettings apiSettings)
+        public EngageService(IEngageApiSettings apiSettings)
         {
-            apiWrapper = new RPXApiWrapper(apiSettings);
+            apiWrapper = new EngageApiWrapper(apiSettings);
         }
 
-        public RPXService(IRPXApiWrapper apiWrapper)
+        public EngageService(IEngageApiWrapper apiWrapper)
         {
             this.apiWrapper = apiWrapper;
         }
 
-        #region IRPXService Members
+        #region IEngageService Members
 
-    	public RPXGetContactsResponse GetContacts(string authenticationDetailsIdentifier)
+    	public EngageGetContactsResponse GetContacts(string authenticationDetailsIdentifier)
     	{
 			if (string.IsNullOrEmpty(authenticationDetailsIdentifier))
 				throw new ArgumentNullException("authenticationDetailsIdentifier", "The identifier supplied to the GetContacts request was null or empty");
@@ -33,7 +33,7 @@ namespace RPXLib
         	          	};
 
 			XElement returnedElement = apiWrapper.Call("get_contacts", req);
-			return RPXGetContactsResponse.FromXElement(returnedElement);
+			return EngageGetContactsResponse.FromXElement(returnedElement);
     	}
 
     	public void UpdateStatus(string authenticationDetailsIdentifier, string status)
@@ -53,7 +53,7 @@ namespace RPXLib
 			apiWrapper.Call("set_status", req);
     	}
 
-    	public void AddActivity(string authenticationDetailsIdentifier, RPXActivity activity)
+    	public void AddActivity(string authenticationDetailsIdentifier, EngageActivity activity)
     	{
     		throw new NotImplementedException();
 
@@ -83,7 +83,7 @@ namespace RPXLib
     		var req = new Dictionary<string, string>();
 
     		XElement returnedElement = apiWrapper.Call("all_mappings", req);
-    		return RPXAllIdentifiers.FromXElement(returnedElement);
+    		return EngageAllIdentifiers.FromXElement(returnedElement);
 		}
 
         public IEnumerable<string> GetAllMappings(string localKey)
@@ -97,7 +97,7 @@ namespace RPXLib
         	          	};
 
             XElement returnedElement = apiWrapper.Call("mappings", req);
-            return RPXIdentifiers.FromXElement(returnedElement);
+            return EngageIdentifiers.FromXElement(returnedElement);
         }
 
         public void RemoveAllMappings(string localKey)
@@ -143,7 +143,7 @@ namespace RPXLib
             apiWrapper.Call("unmap", req);
         }
 
-		public RPXAuthenticationDetails GetUserData(string authenticationDetailsIdentifier)
+		public EngageAuthenticationDetails GetUserData(string authenticationDetailsIdentifier)
 		{
 			if (string.IsNullOrEmpty(authenticationDetailsIdentifier))
 				throw new ArgumentNullException("authenticationDetailsIdentifier", "The authenticationDetailsIdentifier supplied to the GetUserData request was null or empty");
@@ -154,10 +154,10 @@ namespace RPXLib
         	          	};
 
 			var returnedElement = apiWrapper.Call("get_user_data", req);
-			return RPXAuthenticationDetails.FromXElement(returnedElement);
+			return EngageAuthenticationDetails.FromXElement(returnedElement);
 		}
 
-        public RPXAuthenticationDetails GetAuthenticationDetails(string token, bool extended)
+        public EngageAuthenticationDetails GetAuthenticationDetails(string token, bool extended)
         {
             if (string.IsNullOrEmpty(token))
                 throw new ArgumentNullException("token", "The token supplied to the GetAuthenticationDetails request was null or empty");
@@ -170,10 +170,10 @@ namespace RPXLib
                 req.Add("extended", "true");
 
             var returnedElement = apiWrapper.Call("auth_info", req);
-            return RPXAuthenticationDetails.FromXElement(returnedElement);
+            return EngageAuthenticationDetails.FromXElement(returnedElement);
         }
 
-        public RPXAuthenticationDetails GetAuthenticationDetails(string token)
+        public EngageAuthenticationDetails GetAuthenticationDetails(string token)
         {
             return GetAuthenticationDetails(token, false);
         }

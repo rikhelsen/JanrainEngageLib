@@ -1,21 +1,21 @@
 ﻿using System;
 
-namespace RPXLib.Exceptions
+namespace EngageLib.Exceptions
 {
 	[Serializable]
-	public class RPXAuthenticationErrorException : RPXResponseException
+	public class EngageAuthenticationErrorException : EngageResponseException
 	{
-		public RPXAuthenticationErrorException(int errorCode, string message, Exception inner)
+		public EngageAuthenticationErrorException(int errorCode, string message, Exception inner)
 			: base(errorCode, message, inner)
 		{
 		}
 
-		public RPXAuthenticationErrorException(int errorCode, string message)
+		public EngageAuthenticationErrorException(int errorCode, string message)
 			: base(errorCode, message, null)
 		{
 		}
 
-		public RPXAuthenticationErrorException()
+		public EngageAuthenticationErrorException()
 		{
 		}
 	}

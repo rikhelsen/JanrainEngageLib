@@ -3,26 +3,26 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using NUnit.Framework;
 using Rhino.Mocks;
-using RPXLib.Interfaces;
+using EngageLib.Interfaces;
 
-namespace RPXLib.Tests
+namespace EngageLib.Tests
 {
     [TestFixture]
-    public class RPXServiceGetAuthenticationDetailsTests
+    public class EngageServiceGetAuthenticationDetailsTests
     {
         #region Setup/Teardown
 
         [SetUp]
         public void TestSetup()
         {
-            mockApiWrapper = MockRepository.GenerateMock<IRPXApiWrapper>();
-            rpxService = new RPXService(mockApiWrapper);
+            mockApiWrapper = MockRepository.GenerateMock<IEngageApiWrapper>();
+            EngageService = new EngageService(mockApiWrapper);
         }
 
         #endregion
 
-        private RPXService rpxService;
-        private IRPXApiWrapper mockApiWrapper;
+        private EngageService EngageService;
+        private IEngageApiWrapper mockApiWrapper;
 
         [Test]
         public void GetAuthenticationDetails_CallsApiWrapperWithCorrectDetails()
@@ -35,7 +35,7 @@ namespace RPXLib.Tests
                          Arg<IDictionary<string, string>>.Matches(
                              d => d["token"].Equals("token")))).Return(emptyResponse);
 
-            rpxService.GetAuthenticationDetails("token");
+            EngageService.GetAuthenticationDetails("token");
 
             mockApiWrapper.VerifyAllExpectations();
         }
@@ -52,7 +52,7 @@ namespace RPXLib.Tests
                              d => d["token"].Equals("token") &&
                                   d["extended"].Equals("true")))).Return(emptyResponse);
 
-            rpxService.GetAuthenticationDetails("token", true);
+            EngageService.GetAuthenticationDetails("token", true);
 
             mockApiWrapper.VerifyAllExpectations();
         }
@@ -61,14 +61,14 @@ namespace RPXLib.Tests
         [ExpectedException(typeof (ArgumentNullException))]
         public void GetAuthenticationDetails_ThrowsOnEmptyToken()
         {
-            rpxService.GetAuthenticationDetails("");
+            EngageService.GetAuthenticationDetails("");
         }
 
         [Test]
 		[ExpectedException(typeof(ArgumentNullException))]
         public void GetAuthenticationDetails_ThrowsOnNullToken()
         {
-            rpxService.GetAuthenticationDetails(null);
+            EngageService.GetAuthenticationDetails(null);
         }
     }
 }

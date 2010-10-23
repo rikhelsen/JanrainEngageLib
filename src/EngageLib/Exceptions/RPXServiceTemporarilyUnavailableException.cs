@@ -1,21 +1,21 @@
 ﻿using System;
 
-namespace RPXLib.Exceptions
+namespace EngageLib.Exceptions
 {
 	[Serializable]
-	public class RPXServiceTemporarilyUnavailableException : RPXResponseException
+	public class EngageServiceTemporarilyUnavailableException : EngageResponseException
 	{
-		public RPXServiceTemporarilyUnavailableException(int errorCode, string message, Exception inner)
+		public EngageServiceTemporarilyUnavailableException(int errorCode, string message, Exception inner)
 			: base(errorCode, message, inner)
 		{
 		}
 
-		public RPXServiceTemporarilyUnavailableException(int errorCode, string message)
+		public EngageServiceTemporarilyUnavailableException(int errorCode, string message)
 			: base(errorCode, message, null)
 		{
 		}
 
-		public RPXServiceTemporarilyUnavailableException()
+		public EngageServiceTemporarilyUnavailableException()
 		{
 		}
 	}

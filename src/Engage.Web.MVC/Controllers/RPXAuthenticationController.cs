@@ -2,36 +2,36 @@ using System;
 using System.Net;
 using System.Web.Mvc;
 using System.Web.Security;
-using RPXLib;
-using RPXLib.Data;
-using RPXLib.Interfaces;
+using EngageLib;
+using EngageLib.Data;
+using EngageLib.Interfaces;
 
-namespace RPX.Web.MVC.Controllers
+namespace Engage.Web.MVC.Controllers
 {
-    public class RPXAuthenticationController : Controller
+    public class EngageAuthenticationController : Controller
     {
         /// <summary>
         /// Don't forget to map a route to this controller, if you decide to use this base implementation
         /// Check the global.asax.cs file for example routing
         /// </summary>
         
-        private readonly IRPXService rpxService;
+        private readonly IEngageService EngageService;
 
-        public RPXAuthenticationController()
+        public EngageAuthenticationController()
         {
             throw new Exception("Once you have confirmed the base url value, this exception can then be removed.");
-            //TODO: Confirm the base url from your RPX account configuration - https://rpxnow.com/account
-            const string baseUrl = "https://rpxnow.com/api/v2/";
+            //TODO: Confirm the base url from your Engage account configuration - https://Engagenow.com/account
+            const string baseUrl = "https://Engagenow.com/api/v2/";
 
             throw new Exception("Once you have set your api key value, this exception can then be removed.");
-            //TODO: Get the api key from your RPX account configuration - https://rpxnow.com/account
+            //TODO: Get the api key from your Engage account configuration - https://Engagenow.com/account
             const string apiKey = "your_key_goes_here";
 
             //if you need to access the service via a web proxy set the proxy details here
             const IWebProxy webProxy = null;
 
-            var settings = new RPXApiSettings(baseUrl, apiKey, webProxy);
-            rpxService = new RPXService(settings);
+            var settings = new EngageApiSettings(baseUrl, apiKey, webProxy);
+            EngageService = new EngageService(settings);
         }
 
         /// <summary>
@@ -41,9 +41,9 @@ namespace RPX.Web.MVC.Controllers
         /// 
         /// It is for your own good!
         /// </summary>
-        public RPXAuthenticationController(IRPXService rpxService)
+        public EngageAuthenticationController(IEngageService EngageService)
         {
-            this.rpxService = rpxService;
+            this.EngageService = EngageService;
         }
 
         public ActionResult HandleResponse(string token)
@@ -55,12 +55,12 @@ namespace RPX.Web.MVC.Controllers
 
             //This service call will throw an exception if it fails. 
             //You may want to catch it explicitly.
-            var authenticationDetails = rpxService.GetAuthenticationDetails(token, true);
+            var authenticationDetails = EngageService.GetAuthenticationDetails(token, true);
             TempData["id"] = authenticationDetails.Identifier;
 
             SignIn(GetLocalKey(authenticationDetails), true);
 
-            return RedirectToAction("SignedIn", "RPXAuthentication");
+            return RedirectToAction("SignedIn", "EngageAuthentication");
         }
 
         public ViewResult SignedIn()
@@ -79,7 +79,7 @@ namespace RPX.Web.MVC.Controllers
         /// It is possible that you may have already mapped this user, which you can 
         /// confirm by checking the LocalKey property of the AuthenticationDetails.
         /// </summary>
-        private static string GetLocalKey(RPXAuthenticationDetails authenticationDetails)
+        private static string GetLocalKey(EngageAuthenticationDetails authenticationDetails)
         {
             if (string.IsNullOrEmpty(authenticationDetails.LocalKey))
             {

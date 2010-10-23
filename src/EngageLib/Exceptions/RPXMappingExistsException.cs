@@ -1,21 +1,21 @@
 ﻿using System;
 
-namespace RPXLib.Exceptions
+namespace EngageLib.Exceptions
 {
 	[Serializable]
-	public class RPXMappingExistsException : RPXResponseException
+	public class EngageMappingExistsException : EngageResponseException
 	{
-		public RPXMappingExistsException(int errorCode, string message, Exception inner)
+		public EngageMappingExistsException(int errorCode, string message, Exception inner)
 			: base(errorCode, message, inner)
 		{
 		}
 
-		public RPXMappingExistsException(int errorCode, string message)
+		public EngageMappingExistsException(int errorCode, string message)
 			: base(errorCode, message, null)
 		{
 		}
 
-		public RPXMappingExistsException()
+		public EngageMappingExistsException()
 		{
 		}
 	}

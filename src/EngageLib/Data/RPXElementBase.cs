@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 
-namespace RPXLib.Data
+namespace EngageLib.Data
 {
-    public abstract class RPXElementBase
+    public abstract class EngageElementBase
     {
         private readonly IDictionary<string, string> properties = new Dictionary<string, string>();
         

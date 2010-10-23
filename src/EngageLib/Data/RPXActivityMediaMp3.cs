@@ -1,6 +1,6 @@
-﻿namespace RPXLib.Data
+﻿namespace EngageLib.Data
 {
-	public class RPXActivityMediaMp3 : RPXActivityMedia
+	public class EngageActivityMediaMp3 : EngageActivityMedia
 	{
 		public string Url { get; set; }
 		public string Title { get; set; }

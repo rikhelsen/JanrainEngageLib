@@ -1,13 +1,13 @@
 using System.Collections.Generic;
-using RPXLib.Data;
+using EngageLib.Data;
 
-namespace RPXLib.Interfaces
+namespace EngageLib.Interfaces
 {
-    public interface IRPXService
+    public interface IEngageService
     {
-    	RPXGetContactsResponse GetContacts(string authenticationDetailsIdentifier);
+    	EngageGetContactsResponse GetContacts(string authenticationDetailsIdentifier);
 		void UpdateStatus(string authenticationDetailsIdentifier, string status);
-		//void AddActivity(string authenticationDetailsIdentifier, RPXActivity activity);
+		//void AddActivity(string authenticationDetailsIdentifier, EngageActivity activity);
 
     	IDictionary<string, IEnumerable<string>> GetAllMappings();
         IEnumerable<string> GetAllMappings(string localKey);
@@ -15,8 +15,8 @@ namespace RPXLib.Interfaces
         void MapLocalKey(string authenticationDetailsIdentifier, string localKey);
         void UnmapLocalKey(string authenticationDetailsIdentifier, string localKey);
 
-    	RPXAuthenticationDetails GetUserData(string authenticationDetailsIdentifier);
-        RPXAuthenticationDetails GetAuthenticationDetails(string token, bool extended);
-        RPXAuthenticationDetails GetAuthenticationDetails(string token);
+    	EngageAuthenticationDetails GetUserData(string authenticationDetailsIdentifier);
+        EngageAuthenticationDetails GetAuthenticationDetails(string token, bool extended);
+        EngageAuthenticationDetails GetAuthenticationDetails(string token);
     }
 }

@@ -1,8 +1,8 @@
 using System.Xml.Linq;
 
-namespace RPXLib.Data
+namespace EngageLib.Data
 {
-    public class RPXName : RPXElementBase
+    public class EngageName : EngageElementBase
     {
         public string Formatted
         {
@@ -34,9 +34,9 @@ namespace RPXLib.Data
             get { return GetPropertyValue("honorificSuffix"); }
         }
 
-        public static RPXName FromXElement(XElement xElement)
+        public static EngageName FromXElement(XElement xElement)
         {
-            var name = new RPXName();
+            var name = new EngageName();
 
             foreach (var element in xElement.Elements())
             {

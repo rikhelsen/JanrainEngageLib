@@ -1,21 +1,21 @@
 ﻿using System;
 
-namespace RPXLib.Exceptions
+namespace EngageLib.Exceptions
 {
 	[Serializable]
-	public class RPXFacebookErrorException : RPXResponseException
+	public class EngageFacebookErrorException : EngageResponseException
 	{
-		public RPXFacebookErrorException(int errorCode, string message, Exception inner)
+		public EngageFacebookErrorException(int errorCode, string message, Exception inner)
 			: base(errorCode, message, inner)
 		{
 		}
 
-		public RPXFacebookErrorException(int errorCode, string message)
+		public EngageFacebookErrorException(int errorCode, string message)
 			: base(errorCode, message, null)
 		{
 		}
 
-		public RPXFacebookErrorException()
+		public EngageFacebookErrorException()
 		{
 		}
 	}

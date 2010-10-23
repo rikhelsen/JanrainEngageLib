@@ -5,18 +5,18 @@ using System.Net;
 using System.Text;
 using System.Web;
 using System.Xml.Linq;
-using RPXLib.Interfaces;
+using EngageLib.Interfaces;
 
-namespace RPXLib
+namespace EngageLib
 {
-    public class RPXApiWrapper : IRPXApiWrapper
+    public class EngageApiWrapper : IEngageApiWrapper
     {
         private readonly string apiKey;
         private readonly string baseUrl;
         private readonly IWebProxy webProxy;
 
         //this is for my testing purposes only
-        public RPXApiWrapper(IRPXApiSettings settings)
+        public EngageApiWrapper(IEngageApiSettings settings)
         {
             var url = settings.ApiBaseUrl;
             if (!url.EndsWith(@"/"))
@@ -37,7 +37,7 @@ namespace RPXLib
             get { return apiKey; }
         }
 
-        #region IRPXApiWrapper Members
+        #region IEngageApiWrapper Members
 
         public XElement Call(string methodName, IDictionary<string, string> queryData)
         {
@@ -50,7 +50,7 @@ namespace RPXLib
             using (Stream dataStream = response.GetResponseStream())
             using (var responseReader = new StreamReader(dataStream))
             {
-                return RPXApiResponseParser.Parse(responseReader);
+                return EngageApiResponseParser.Parse(responseReader);
             }
         }
 

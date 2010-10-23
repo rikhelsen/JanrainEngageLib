@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Xml.Linq;
 
-namespace RPXLib.Interfaces
+namespace EngageLib.Interfaces
 {
-    public interface IRPXApiWrapper
+    public interface IEngageApiWrapper
     {
         XElement Call(string methodName, IDictionary<string, string> queryData);
     }

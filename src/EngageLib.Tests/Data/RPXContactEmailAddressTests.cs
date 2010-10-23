@@ -1,11 +1,11 @@
 ﻿using System.Xml.Linq;
 using NUnit.Framework;
-using RPXLib.Data;
+using EngageLib.Data;
 
-namespace RPXLib.Tests.Data
+namespace EngageLib.Tests.Data
 {
 	[TestFixture]
-	public class RPXContactEmailAddressTests
+	public class EngageContactEmailAddressTests
 	{
 		[Test]
 		public void GetFromXElement_ParsesContactEmailAddressCorrectly()
@@ -14,7 +14,7 @@ namespace RPXLib.Tests.Data
 					new XElement("type", "Email Type"),
 					new XElement("value", "user@domain.com")
 				);
-			var emailAddress = RPXContactEmailAddress.FromXElement(xelement);
+			var emailAddress = EngageContactEmailAddress.FromXElement(xelement);
 
 			Assert.AreEqual("Email Type", emailAddress.Type);
 			Assert.AreEqual("user@domain.com", emailAddress.EmailAddress);
@@ -26,7 +26,7 @@ namespace RPXLib.Tests.Data
 			var xelement = new XElement("email",
 					new XElement("value", "user@domain.com")
 				);
-			var emailAddress = RPXContactEmailAddress.FromXElement(xelement);
+			var emailAddress = EngageContactEmailAddress.FromXElement(xelement);
 
 			Assert.IsNull(emailAddress.Type);
 			Assert.AreEqual("user@domain.com", emailAddress.EmailAddress);
@@ -38,7 +38,7 @@ namespace RPXLib.Tests.Data
 			var xelement = new XElement("email",
 					new XElement("type", "Email Type")
 				);
-			var emailAddress = RPXContactEmailAddress.FromXElement(xelement);
+			var emailAddress = EngageContactEmailAddress.FromXElement(xelement);
 
 			Assert.AreEqual("Email Type", emailAddress.Type);
 			Assert.IsNull(emailAddress.EmailAddress);

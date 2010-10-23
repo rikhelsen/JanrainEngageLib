@@ -1,6 +1,6 @@
-﻿namespace RPXLib.Data
+﻿namespace EngageLib.Data
 {
-	public class RPXActivityMediaFlash : RPXActivityMedia
+	public class EngageActivityMediaFlash : EngageActivityMedia
 	{
 		public string SwfUrl { get; set; }
 		public string ImageUrl { get; set; }

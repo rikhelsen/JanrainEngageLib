@@ -1,17 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Linq;
 
-namespace RPXLib.Data
+namespace EngageLib.Data
 {
-	public class RPXGetContactsResponse : List<RPXContact>
+	public class EngageGetContactsResponse : List<EngageContact>
 	{
 		public int ItemsPerPage { get; private set; }
 		public int TotalResults { get; private set; }
 		public int StartIndex { get; private set; }
 
-		public static RPXGetContactsResponse FromXElement(XElement xElement)
+		public static EngageGetContactsResponse FromXElement(XElement xElement)
 		{
-			var contacts = new RPXGetContactsResponse
+			var contacts = new EngageGetContactsResponse
 			               	{
 								ItemsPerPage = int.Parse(xElement.Element("response").Element("itemsPerPage").Value),
 								TotalResults = int.Parse(xElement.Element("response").Element("totalResults").Value),
@@ -19,7 +19,7 @@ namespace RPXLib.Data
 			               	};
 
 			foreach(var contact in xElement.Element("response").Elements("entry"))
-				contacts.Add(RPXContact.FromXElement(contact));
+				contacts.Add(EngageContact.FromXElement(contact));
 
 			return contacts;
 		}

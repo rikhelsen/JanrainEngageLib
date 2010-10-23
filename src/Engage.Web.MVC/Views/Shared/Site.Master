@@ -13,7 +13,7 @@
 
         <div id="header">
             <div id="title">
-                <h1>RPXLib demo</h1>
+                <h1>EngageLib demo</h1>
             </div>
               
             <div id="logindisplay">
@@ -33,7 +33,7 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
 
             <div id="footer">
-               RPXLib demo &copy; Copyright 2008
+               EngageLib demo &copy; Copyright 2008
             </div>
         </div>
     </div>

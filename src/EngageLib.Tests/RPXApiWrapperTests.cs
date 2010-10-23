@@ -1,30 +1,30 @@
 using NUnit.Framework;
 
-namespace RPXLib.Tests
+namespace EngageLib.Tests
 {
-    public class RPXApiWrapperTests
+    public class EngageApiWrapperTests
     {
         [Test]
         public void ConstructorAppendsDirectorySeperatorIfNotExists()
         {
-            var settings = new RPXApiSettings("http://abc.com", "");
-            var api = new RPXApiWrapper(settings);
+            var settings = new EngageApiSettings("http://abc.com", "");
+            var api = new EngageApiWrapper(settings);
             Assert.AreEqual("http://abc.com/", api.BaseUrl);
         }
 
         [Test]
         public void ConstructorSetsApiKey()
         {
-            var settings = new RPXApiSettings("http://abc.com/", "apikey");
-            var api = new RPXApiWrapper(settings);
+            var settings = new EngageApiSettings("http://abc.com/", "apikey");
+            var api = new EngageApiWrapper(settings);
             Assert.AreEqual("apikey", api.ApiKey);
         }
 
         [Test]
         public void ConstructorSetsBaseUrl()
         {
-            var settings = new RPXApiSettings("http://abc.com/", "");
-            var api = new RPXApiWrapper(settings);
+            var settings = new EngageApiSettings("http://abc.com/", "");
+            var api = new EngageApiWrapper(settings);
             Assert.AreEqual("http://abc.com/", api.BaseUrl);
         }
     }

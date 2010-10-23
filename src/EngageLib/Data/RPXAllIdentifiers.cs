@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Linq;
 
-namespace RPXLib.Data
+namespace EngageLib.Data
 {
-	public class RPXAllIdentifiers : Dictionary<string, IEnumerable<string>>
+	public class EngageAllIdentifiers : Dictionary<string, IEnumerable<string>>
 	{
-		public static RPXAllIdentifiers FromXElement(XElement xElement)
+		public static EngageAllIdentifiers FromXElement(XElement xElement)
 		{
-			var allIdentifiers = new RPXAllIdentifiers();
+			var allIdentifiers = new EngageAllIdentifiers();
 
 			foreach(var setofIdentifiers in xElement.Element("mappings").Elements("mapping"))
-				allIdentifiers.Add(setofIdentifiers.Element("primaryKey").Value, RPXIdentifiers.FromXElement(setofIdentifiers));
+				allIdentifiers.Add(setofIdentifiers.Element("primaryKey").Value, EngageIdentifiers.FromXElement(setofIdentifiers));
 			
 			return allIdentifiers;
 		}

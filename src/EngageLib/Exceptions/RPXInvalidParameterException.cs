@@ -1,21 +1,21 @@
 ﻿using System;
 
-namespace RPXLib.Exceptions
+namespace EngageLib.Exceptions
 {
 	[Serializable]
-	public class RPXInvalidParameterException : RPXResponseException
+	public class EngageInvalidParameterException : EngageResponseException
 	{
-		public RPXInvalidParameterException(int errorCode, string message, Exception inner)
+		public EngageInvalidParameterException(int errorCode, string message, Exception inner)
 			: base(errorCode, message, inner)
 		{
 		}
 
-		public RPXInvalidParameterException(int errorCode, string message)
+		public EngageInvalidParameterException(int errorCode, string message)
 			: base(errorCode, message, null)
 		{
 		}
 
-		public RPXInvalidParameterException()
+		public EngageInvalidParameterException()
 		{
 		}
 	}

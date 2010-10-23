@@ -1,22 +1,22 @@
 using NUnit.Framework;
-using RPXLib.Data;
+using EngageLib.Data;
 
-namespace RPXLib.Tests.Data
+namespace EngageLib.Tests.Data
 {
     [TestFixture]
-    public class RPXAuthenticationDetailsTests
+    public class EngageAuthenticationDetailsTests
     {
         #region Setup/Teardown
 
         [SetUp]
         public void TestSetup()
         {
-            details = new RPXAuthenticationDetails();
+            details = new EngageAuthenticationDetails();
         }
 
         #endregion
 
-        private RPXAuthenticationDetails details;
+        private EngageAuthenticationDetails details;
 
         [Test]
         public void CanPopulateBirthdayProperty()

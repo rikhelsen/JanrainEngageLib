@@ -1,22 +1,22 @@
 using NUnit.Framework;
-using RPXLib.Data;
+using EngageLib.Data;
 
-namespace RPXLib.Tests.Data
+namespace EngageLib.Tests.Data
 {
     [TestFixture]
-    public class RPXAddressTests
+    public class EngageAddressTests
     {
         #region Setup/Teardown
 
         [SetUp]
         public void TestSetup()
         {
-            address = new RPXAddress();
+            address = new EngageAddress();
         }
 
         #endregion
 
-        private RPXAddress address;
+        private EngageAddress address;
 
         [Test]
         public void CanPopulateCountryProperty()

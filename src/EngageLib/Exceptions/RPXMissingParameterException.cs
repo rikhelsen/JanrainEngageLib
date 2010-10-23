@@ -1,21 +1,21 @@
 ﻿using System;
 
-namespace RPXLib.Exceptions
+namespace EngageLib.Exceptions
 {
 	[Serializable]
-	public class RPXMissingParameterException : RPXResponseException
+	public class EngageMissingParameterException : EngageResponseException
 	{
-		public RPXMissingParameterException(int errorCode, string message, Exception inner)
+		public EngageMissingParameterException(int errorCode, string message, Exception inner)
 			: base(errorCode, message, inner)
 		{
 		}
 
-		public RPXMissingParameterException(int errorCode, string message)
+		public EngageMissingParameterException(int errorCode, string message)
 			: base(errorCode, message, null)
 		{
 		}
 
-		public RPXMissingParameterException()
+		public EngageMissingParameterException()
 		{
 		}
 	}

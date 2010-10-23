@@ -1,101 +1,101 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="RPXLib.Data.RPXAddress">
+  <Class Name="EngageLib.Data.EngageAddress">
     <Position X="4.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAgAAhAAAAIAAAAAAAgAIAAAAAAAAAAAAAABA=</HashCode>
-      <FileName>Data\RPXAddress.cs</FileName>
+      <FileName>Data\EngageAddress.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RPXLib.Data.RPXAuthenticationDetails">
+  <Class Name="EngageLib.Data.EngageAuthenticationDetails">
     <Position X="2.25" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>QAAAEAAAACAgAACAgAAIQAQBQAIMBAACCAAAYAAQAAA=</HashCode>
-      <FileName>Data\RPXAuthenticationDetails.cs</FileName>
+      <FileName>Data\EngageAuthenticationDetails.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RPXLib.Data.RPXIdentifiers">
+  <Class Name="EngageLib.Data.EngageIdentifiers">
     <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Data\RPXIdentifiers.cs</FileName>
+      <FileName>Data\EngageIdentifiers.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RPXLib.Data.RPXName">
+  <Class Name="EngageLib.Data.EngageName">
     <Position X="4.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAgAhAAAAAAAUAAAAAAAAQAAAAAAAEAAAAAA=</HashCode>
-      <FileName>Data\RPXName.cs</FileName>
+      <FileName>Data\EngageName.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RPXLib.Data.RPXActivity">
+  <Class Name="EngageLib.Data.EngageActivity">
     <Position X="14.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAEAAAAAAAAAAAAAAAAAACAAAAAADAAQ=</HashCode>
-      <FileName>Data\RPXActivity.cs</FileName>
+      <FileName>Data\EngageActivity.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RPXLib.Data.RPXActivityMediaVideo">
+  <Class Name="EngageLib.Data.EngageActivityMediaVideo">
     <Position X="8.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAACAAACAAAAAAAQAA=</HashCode>
-      <FileName>Data\RPXActivityMediaVideo.cs</FileName>
+      <FileName>Data\EngageActivityMediaVideo.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RPXLib.Data.RPXActivityMedia">
+  <Class Name="EngageLib.Data.EngageActivityMedia">
     <Position X="9.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
-      <FileName>Data\RPXActivityMedia.cs</FileName>
+      <FileName>Data\EngageActivityMedia.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RPXLib.Data.RPXActivityMediaFlash">
+  <Class Name="EngageLib.Data.EngageActivityMediaFlash">
     <Position X="13" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAQBAABAAAAAAAAAAAAEAAAAAAAAAACCAAAAAAAAA=</HashCode>
-      <FileName>Data\RPXActivityMediaFlash.cs</FileName>
+      <FileName>Data\EngageActivityMediaFlash.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RPXLib.Data.RPXActivityMediaImage">
+  <Class Name="EngageLib.Data.EngageActivityMediaImage">
     <Position X="6.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
-      <FileName>Data\RPXActivityMediaImage.cs</FileName>
+      <FileName>Data\EngageActivityMediaImage.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RPXLib.Data.RPXActivityMediaMp3">
+  <Class Name="EngageLib.Data.EngageActivityMediaMp3">
     <Position X="10.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAIAAAAAACAAACAAAAAA=</HashCode>
-      <FileName>Data\RPXActivityMediaMp3.cs</FileName>
+      <FileName>Data\EngageActivityMediaMp3.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RPXLib.Data.RPXAllIdentifiers">
+  <Class Name="EngageLib.Data.EngageAllIdentifiers">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Data\RPXAllIdentifiers.cs</FileName>
+      <FileName>Data\EngageAllIdentifiers.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RPXLib.Data.RPXContact">
+  <Class Name="EngageLib.Data.EngageContact">
     <Position X="8.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAEAAACAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Data\RPXContact.cs</FileName>
+      <FileName>Data\EngageContact.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RPXLib.Data.RPXContactEmailAddress">
+  <Class Name="EngageLib.Data.EngageContactEmailAddress">
     <Position X="10" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAQAAAgAAAAA=</HashCode>
-      <FileName>Data\RPXContactEmailAddress.cs</FileName>
+      <FileName>Data\EngageContactEmailAddress.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RPXLib.Data.RPXGetContactsResponse">
+  <Class Name="EngageLib.Data.EngageGetContactsResponse">
     <Position X="6.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAAAAAAAABAAAAAIBAAAAAAAAAAAA=</HashCode>
-      <FileName>Data\RPXGetContactsResponse.cs</FileName>
+      <FileName>Data\EngageGetContactsResponse.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Tahoma" Size="8.25" />

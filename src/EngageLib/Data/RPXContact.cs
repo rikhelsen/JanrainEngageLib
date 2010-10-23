@@ -2,26 +2,26 @@
 using System.Linq;
 using System.Xml.Linq;
 
-namespace RPXLib.Data
+namespace EngageLib.Data
 {
-	public class RPXContact
+	public class EngageContact
 	{
 		public string DisplayName { get; private set; }
-		public IEnumerable<RPXContactEmailAddress> EmailAddresses { get; private set; }
+		public IEnumerable<EngageContactEmailAddress> EmailAddresses { get; private set; }
 
-		public static RPXContact FromXElement(XElement xElement)
+		public static EngageContact FromXElement(XElement xElement)
 		{
-			return new RPXContact
+			return new EngageContact
 			       	{
 			       		DisplayName = xElement.Element("displayName") == null
 			       			? null
 			       			: xElement.Element("displayName").Value,
 						EmailAddresses = xElement.Element("emails") == null
-							? new List<RPXContactEmailAddress>()
+							? new List<EngageContactEmailAddress>()
 							: xElement
 			       				.Element("emails")
 			       				.Elements("email")
-			       				.Select(email => RPXContactEmailAddress.FromXElement(email))
+			       				.Select(email => EngageContactEmailAddress.FromXElement(email))
 			       				.ToList()
 			       	};
 		}

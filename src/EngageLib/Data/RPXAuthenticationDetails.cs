@@ -1,13 +1,13 @@
 using System.Xml.Linq;
 
-namespace RPXLib.Data
+namespace EngageLib.Data
 {
-    public class RPXAuthenticationDetails : RPXElementBase
+    public class EngageAuthenticationDetails : EngageElementBase
     {
-        private RPXAddress address;
-        private RPXName name;
+        private EngageAddress address;
+        private EngageName name;
 
-        public RPXAddress Address
+        public EngageAddress Address
         {
             get { return address; }
         }
@@ -42,7 +42,7 @@ namespace RPXLib.Data
             get { return GetPropertyValue("primaryKey"); }
         }
 
-        public RPXName Name
+        public EngageName Name
         {
             get { return name; }
         }
@@ -82,30 +82,30 @@ namespace RPXLib.Data
             get { return GetPropertyValue("verifiedEmail"); }
         }
 
-        private void AssignName(RPXName name)
+        private void AssignName(EngageName name)
         {
             this.name = name;
         }
 
-        private void AssignAddress(RPXAddress address)
+        private void AssignAddress(EngageAddress address)
         {
             this.address = address;
         }
 
-        public static RPXAuthenticationDetails FromXElement(XElement xElement)
+        public static EngageAuthenticationDetails FromXElement(XElement xElement)
         {
-            var details = new RPXAuthenticationDetails();
+            var details = new EngageAuthenticationDetails();
 
             foreach (var element in xElement.Element("profile").Elements())
             {
                 var elementLocalName = element.Name.LocalName;
                 if (elementLocalName == "name")
                 {
-                    details.AssignName(RPXName.FromXElement(element));
+                    details.AssignName(EngageName.FromXElement(element));
                 }
                 else if (elementLocalName == "address")
                 {
-                    details.AssignAddress(RPXAddress.FromXElement(element));
+                    details.AssignAddress(EngageAddress.FromXElement(element));
                 }
                 else
                 {
@@ -114,10 +114,10 @@ namespace RPXLib.Data
             }
 
 			if(details.Name == null)
-				details.AssignName(new RPXName());
+				details.AssignName(new EngageName());
 
 			if(details.Address == null)
-				details.AssignAddress(new RPXAddress());
+				details.AssignAddress(new EngageAddress());
 
             return details;
         }

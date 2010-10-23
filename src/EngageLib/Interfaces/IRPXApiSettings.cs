@@ -1,8 +1,8 @@
 using System.Net;
 
-namespace RPXLib.Interfaces
+namespace EngageLib.Interfaces
 {
-    public interface IRPXApiSettings
+    public interface IEngageApiSettings
     {
         string ApiKey { get; }
         string ApiBaseUrl { get; }

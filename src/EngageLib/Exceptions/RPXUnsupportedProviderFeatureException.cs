@@ -1,21 +1,21 @@
 ﻿using System;
 
-namespace RPXLib.Exceptions
+namespace EngageLib.Exceptions
 {
 	[Serializable]
-	public class RPXUnsupportedProviderFeatureException : RPXResponseException
+	public class EngageUnsupportedProviderFeatureException : EngageResponseException
 	{
-		public RPXUnsupportedProviderFeatureException(int errorCode, string message, Exception inner)
+		public EngageUnsupportedProviderFeatureException(int errorCode, string message, Exception inner)
 			: base(errorCode, message, inner)
 		{
 		}
 
-		public RPXUnsupportedProviderFeatureException(int errorCode, string message)
+		public EngageUnsupportedProviderFeatureException(int errorCode, string message)
 			: base(errorCode, message, null)
 		{
 		}
 
-		public RPXUnsupportedProviderFeatureException()
+		public EngageUnsupportedProviderFeatureException()
 		{
 		}
 	}

@@ -1,21 +1,21 @@
 ﻿using System;
 
-namespace RPXLib.Exceptions
+namespace EngageLib.Exceptions
 {
 	[Serializable]
-	public class RPXPreviouslyOperationalProviderException : RPXResponseException
+	public class EngagePreviouslyOperationalProviderException : EngageResponseException
 	{
-		public RPXPreviouslyOperationalProviderException(int errorCode, string message, Exception inner)
+		public EngagePreviouslyOperationalProviderException(int errorCode, string message, Exception inner)
 			: base(errorCode, message, inner)
 		{
 		}
 
-		public RPXPreviouslyOperationalProviderException(int errorCode, string message)
+		public EngagePreviouslyOperationalProviderException(int errorCode, string message)
 			: base(errorCode, message, null)
 		{
 		}
 
-		public RPXPreviouslyOperationalProviderException()
+		public EngagePreviouslyOperationalProviderException()
 		{
 		}
 	}

@@ -1,26 +1,26 @@
 using System.Net;
-using RPXLib.Interfaces;
+using EngageLib.Interfaces;
 
-namespace RPXLib
+namespace EngageLib
 {
-    public class RPXApiSettings : IRPXApiSettings
+    public class EngageApiSettings : IEngageApiSettings
     {
         private readonly string apiKey;
         private readonly string apiBaseUrl;
         private readonly IWebProxy webProxy;
 
-        public RPXApiSettings(string apiBaseUrl, string apiKey) : this(apiBaseUrl, apiKey, null)
+        public EngageApiSettings(string apiBaseUrl, string apiKey) : this(apiBaseUrl, apiKey, null)
         {
         }
 
-        public RPXApiSettings(string apiBaseUrl, string apiKey, IWebProxy webProxy)
+        public EngageApiSettings(string apiBaseUrl, string apiKey, IWebProxy webProxy)
         {
             this.apiBaseUrl = apiBaseUrl;
             this.apiKey = apiKey;
             this.webProxy = webProxy;
         }
 
-        #region IRPXApiSettings Members
+        #region IEngageApiSettings Members
 
         public IWebProxy WebProxy
         {

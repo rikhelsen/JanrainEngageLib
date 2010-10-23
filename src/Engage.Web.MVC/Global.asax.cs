@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace RPX.Web.MVC
+namespace Engage.Web.MVC
 {
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=9394801
@@ -14,15 +14,15 @@ namespace RPX.Web.MVC
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                "RPX.Signout", // Route name
-                "RPXAuthentication/SignOut", // URL with parameters
-                new {controller = "RPXAuthentication", action = "SignOut"} // Parameter defaults
+                "Engage.Signout", // Route name
+                "EngageAuthentication/SignOut", // URL with parameters
+                new {controller = "EngageAuthentication", action = "SignOut"} // Parameter defaults
                 );
 
             routes.MapRoute(
-                "RPX.HandleResponse", // Route name
-                "RPXAuthentication/HandleResponse", // URL with parameters
-                new {controller = "RPXAuthentication", action = "HandleResponse"} // Parameter defaults
+                "Engage.HandleResponse", // Route name
+                "EngageAuthentication/HandleResponse", // URL with parameters
+                new {controller = "EngageAuthentication", action = "HandleResponse"} // Parameter defaults
                 );
 
             routes.MapRoute(

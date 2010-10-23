@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 using System.Xml.Linq;
 
-namespace RPXLib.Data
+namespace EngageLib.Data
 {
-    public class RPXIdentifiers : List<string>
+    public class EngageIdentifiers : List<string>
     {
-        public static RPXIdentifiers FromXElement(XElement xElement)
+        public static EngageIdentifiers FromXElement(XElement xElement)
         {
-            var identifiers = new RPXIdentifiers();
+            var identifiers = new EngageIdentifiers();
 
             foreach (var element in xElement.Element("identifiers").Elements("identifier"))
                 identifiers.Add(element.Value);

@@ -1,21 +1,21 @@
 ﻿using System;
 
-namespace RPXLib.Exceptions
+namespace EngageLib.Exceptions
 {
 	[Serializable]
-	public class RPXTokenUrlMismatchException : RPXAuthenticationErrorException
+	public class EngageTokenUrlMismatchException : EngageAuthenticationErrorException
 	{
-		public RPXTokenUrlMismatchException(int errorCode, string message, Exception inner)
+		public EngageTokenUrlMismatchException(int errorCode, string message, Exception inner)
 			: base(errorCode, message, inner)
 		{
 		}
 
-		public RPXTokenUrlMismatchException(int errorCode, string message)
+		public EngageTokenUrlMismatchException(int errorCode, string message)
 			: base(errorCode, message, null)
 		{
 		}
 
-		public RPXTokenUrlMismatchException()
+		public EngageTokenUrlMismatchException()
 		{
 		}
 	}

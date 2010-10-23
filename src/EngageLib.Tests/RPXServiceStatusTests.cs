@@ -2,26 +2,26 @@ using System;
 using System.Collections.Generic;
 using NUnit.Framework;
 using Rhino.Mocks;
-using RPXLib.Interfaces;
+using EngageLib.Interfaces;
 
-namespace RPXLib.Tests
+namespace EngageLib.Tests
 {
     [TestFixture]
-    public class RPXServiceStatusTests
+    public class EngageServiceStatusTests
     {
         #region Setup/Teardown
 
         [SetUp]
         public void TestSetup()
         {
-            mockApiWrapper = MockRepository.GenerateMock<IRPXApiWrapper>();
-            rpxService = new RPXService(mockApiWrapper);
+            mockApiWrapper = MockRepository.GenerateMock<IEngageApiWrapper>();
+            EngageService = new EngageService(mockApiWrapper);
         }
 
         #endregion
 
-        private RPXService rpxService;
-        private IRPXApiWrapper mockApiWrapper;
+        private EngageService EngageService;
+        private IEngageApiWrapper mockApiWrapper;
 
 		[Test]
 		public void UpdateStatus_CallsApiWrapperWithCorrectDetails()
@@ -33,7 +33,7 @@ namespace RPXLib.Tests
 							d => d["identifier"].Equals("id") && d["status"].Equals("statusValue")
 							))).Return(null);
 
-			rpxService.UpdateStatus("id", "statusValue");
+			EngageService.UpdateStatus("id", "statusValue");
 
 			mockApiWrapper.VerifyAllExpectations();
 		}
@@ -42,28 +42,28 @@ namespace RPXLib.Tests
 		[ExpectedException(typeof(ArgumentNullException))]
 		public void UpdateStatus_ThrowsOnEmptyIdentifier()
 		{
-			rpxService.UpdateStatus("", "status");
+			EngageService.UpdateStatus("", "status");
 		}
 
 		[Test]
 		[ExpectedException(typeof(ArgumentNullException))]
 		public void GetMappings_ThrowsOnNullIdentifier()
 		{
-			rpxService.UpdateStatus(null, "status");
+			EngageService.UpdateStatus(null, "status");
 		}
 
 		[Test]
 		[ExpectedException(typeof(ArgumentNullException))]
 		public void UpdateStatus_ThrowsOnEmptyStatus()
 		{
-			rpxService.UpdateStatus("id", "");
+			EngageService.UpdateStatus("id", "");
 		}
 
 		[Test]
 		[ExpectedException(typeof(ArgumentNullException))]
 		public void GetMappings_ThrowsOnNullStatus()
 		{
-			rpxService.UpdateStatus("id", null);
+			EngageService.UpdateStatus("id", null);
 		}
     }
 }

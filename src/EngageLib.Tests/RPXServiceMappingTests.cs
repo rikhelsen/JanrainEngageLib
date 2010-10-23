@@ -3,26 +3,26 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using NUnit.Framework;
 using Rhino.Mocks;
-using RPXLib.Interfaces;
+using EngageLib.Interfaces;
 
-namespace RPXLib.Tests
+namespace EngageLib.Tests
 {
     [TestFixture]
-    public class RPXServiceMappingTests
+    public class EngageServiceMappingTests
     {
         #region Setup/Teardown
 
         [SetUp]
         public void TestSetup()
         {
-            mockApiWrapper = MockRepository.GenerateMock<IRPXApiWrapper>();
-            rpxService = new RPXService(mockApiWrapper);
+            mockApiWrapper = MockRepository.GenerateMock<IEngageApiWrapper>();
+            EngageService = new EngageService(mockApiWrapper);
         }
 
         #endregion
 
-        private RPXService rpxService;
-        private IRPXApiWrapper mockApiWrapper;
+        private EngageService EngageService;
+        private IEngageApiWrapper mockApiWrapper;
 
 		[Test]
 		public void GetAllMappings_CallsApiWrapperWithCorrectDetails()
@@ -42,7 +42,7 @@ namespace RPXLib.Tests
 				     	Arg<IDictionary<string, string>>.Matches(
 				     		d => d.Count == 0))).Return(emptyResponse);
 
-			rpxService.GetAllMappings();
+			EngageService.GetAllMappings();
 
 			mockApiWrapper.VerifyAllExpectations();
 		}
@@ -58,7 +58,7 @@ namespace RPXLib.Tests
                          Arg<IDictionary<string, string>>.Matches(
                              d => d["primaryKey"].Equals("key")))).Return(emptyResponse);
 
-            rpxService.GetAllMappings("key");
+            EngageService.GetAllMappings("key");
 
             mockApiWrapper.VerifyAllExpectations();
         }
@@ -67,14 +67,14 @@ namespace RPXLib.Tests
 		[ExpectedException(typeof(ArgumentNullException))]
         public void GetMappings_ThrowsOnEmptyLocalKey()
         {
-            rpxService.GetAllMappings("");
+            EngageService.GetAllMappings("");
         }
 
         [Test]
 		[ExpectedException(typeof(ArgumentNullException))]
         public void GetMappings_ThrowsOnNullLocalKey()
         {
-            rpxService.GetAllMappings(null);
+            EngageService.GetAllMappings(null);
         }
 
         [Test]
@@ -87,7 +87,7 @@ namespace RPXLib.Tests
                              d => d["identifier"].Equals("id") &&
                                   d["primaryKey"].Equals("key")))).Return(null);
 
-            rpxService.MapLocalKey("id", "key");
+            EngageService.MapLocalKey("id", "key");
 
             mockApiWrapper.VerifyAllExpectations();
         }
@@ -96,28 +96,28 @@ namespace RPXLib.Tests
 		[ExpectedException(typeof(ArgumentNullException))]
         public void MapLocalKey_ThrowsOnEmptyIdentifier()
         {
-            rpxService.MapLocalKey("", "key");
+            EngageService.MapLocalKey("", "key");
         }
 
         [Test]
 		[ExpectedException(typeof(ArgumentNullException))]
         public void MapLocalKey_ThrowsOnEmptyLocalKey()
         {
-            rpxService.MapLocalKey("id", "");
+            EngageService.MapLocalKey("id", "");
         }
 
         [Test]
 		[ExpectedException(typeof(ArgumentNullException))]
         public void MapLocalKey_ThrowsOnNullIdentifier()
         {
-            rpxService.MapLocalKey(null, "key");
+            EngageService.MapLocalKey(null, "key");
         }
 
         [Test]
 		[ExpectedException(typeof(ArgumentNullException))]
         public void MapLocalKey_ThrowsOnNullLocalKey()
         {
-            rpxService.MapLocalKey("id", null);
+            EngageService.MapLocalKey("id", null);
         }
 
         [Test]
@@ -130,7 +130,7 @@ namespace RPXLib.Tests
                              d => d["identifier"].Equals("id") &&
                                   d["primaryKey"].Equals("key")))).Return(null);
 
-            rpxService.UnmapLocalKey("id", "key");
+            EngageService.UnmapLocalKey("id", "key");
 
             mockApiWrapper.VerifyAllExpectations();
         }
@@ -139,28 +139,28 @@ namespace RPXLib.Tests
 		[ExpectedException(typeof(ArgumentNullException))]
         public void UnmapLocalKey_ThrowsOnEmptyIdentifier()
         {
-            rpxService.UnmapLocalKey("", "key");
+            EngageService.UnmapLocalKey("", "key");
         }
 
         [Test]
 		[ExpectedException(typeof(ArgumentNullException))]
         public void UnmapLocalKey_ThrowsOnEmptyLocalKey()
         {
-            rpxService.UnmapLocalKey("id", "");
+            EngageService.UnmapLocalKey("id", "");
         }
 
         [Test]
 		[ExpectedException(typeof(ArgumentNullException))]
         public void UnmapLocalKey_ThrowsOnNullIdentifier()
         {
-            rpxService.UnmapLocalKey(null, "key");
+            EngageService.UnmapLocalKey(null, "key");
         }
 
         [Test]
 		[ExpectedException(typeof(ArgumentNullException))]
         public void UnmapLocalKey_ThrowsOnNullLocalKey()
         {
-            rpxService.UnmapLocalKey("id", null);
+            EngageService.UnmapLocalKey("id", null);
         }
     }
 }

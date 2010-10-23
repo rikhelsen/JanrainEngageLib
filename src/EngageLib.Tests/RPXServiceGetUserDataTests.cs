@@ -3,26 +3,26 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using NUnit.Framework;
 using Rhino.Mocks;
-using RPXLib.Interfaces;
+using EngageLib.Interfaces;
 
-namespace RPXLib.Tests
+namespace EngageLib.Tests
 {
     [TestFixture]
-    public class RPXServiceGetUserDataTests
+    public class EngageServiceGetUserDataTests
     {
         #region Setup/Teardown
 
         [SetUp]
         public void TestSetup()
         {
-            mockApiWrapper = MockRepository.GenerateMock<IRPXApiWrapper>();
-            rpxService = new RPXService(mockApiWrapper);
+            mockApiWrapper = MockRepository.GenerateMock<IEngageApiWrapper>();
+            EngageService = new EngageService(mockApiWrapper);
         }
 
         #endregion
 
-        private RPXService rpxService;
-        private IRPXApiWrapper mockApiWrapper;
+        private EngageService EngageService;
+        private IEngageApiWrapper mockApiWrapper;
 
         [Test]
         public void GetUserData_CallsApiWrapperWithCorrectDetails()
@@ -35,7 +35,7 @@ namespace RPXLib.Tests
                          Arg<IDictionary<string, string>>.Matches(
                              d => d["identifier"].Equals("id")))).Return(emptyResponse);
 
-            rpxService.GetUserData("id");
+            EngageService.GetUserData("id");
 
             mockApiWrapper.VerifyAllExpectations();
         }
@@ -44,14 +44,14 @@ namespace RPXLib.Tests
         [ExpectedException(typeof (ArgumentNullException))]
 		public void GetUserData_ThrowsOnEmptyIdentifier()
         {
-			rpxService.GetUserData("");
+			EngageService.GetUserData("");
         }
 
         [Test]
 		[ExpectedException(typeof(ArgumentNullException))]
 		public void GetUserData_ThrowsOnNullIdentifier()
         {
-			rpxService.GetUserData(null);
+			EngageService.GetUserData(null);
         }
     }
 }

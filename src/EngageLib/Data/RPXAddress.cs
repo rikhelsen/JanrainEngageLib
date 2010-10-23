@@ -1,8 +1,8 @@
 using System.Xml.Linq;
 
-namespace RPXLib.Data
+namespace EngageLib.Data
 {
-    public class RPXAddress : RPXElementBase
+    public class EngageAddress : EngageElementBase
     {
         public string Formatted
         {
@@ -34,9 +34,9 @@ namespace RPXLib.Data
             get { return GetPropertyValue("country"); }
         }
 
-        public static RPXAddress FromXElement(XElement xElement)
+        public static EngageAddress FromXElement(XElement xElement)
         {
-            var name = new RPXAddress();
+            var name = new EngageAddress();
 
             foreach (var element in xElement.Elements())
             {

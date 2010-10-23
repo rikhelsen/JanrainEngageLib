@@ -1,6 +1,6 @@
-﻿namespace RPXLib.Data
+﻿namespace EngageLib.Data
 {
-	public abstract class RPXActivityMedia
+	public abstract class EngageActivityMedia
 	{
 		public string Type{ get; set; }
 	}
