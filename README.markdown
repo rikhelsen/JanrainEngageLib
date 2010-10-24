@@ -4,5 +4,7 @@ Included is a sample ASP.Net MVC 1.0 sample web site to demonstrate the integrat
 
 # What you Need
 Visual Studio 2008 and MVC 1.0
+
 NUnit (currently using 2.5.7)
+
 [Janrain Engage Account](http://www.janrain.com/products/engage) 
